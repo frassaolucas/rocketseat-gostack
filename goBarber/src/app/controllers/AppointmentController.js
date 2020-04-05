@@ -145,6 +145,8 @@ class AppointmentController {
 
     appointment.canceled_at = new Date();
 
+    await appointment.save();
+
     await Queue.add(CancelledMail.key, {
       appointment,
     });
