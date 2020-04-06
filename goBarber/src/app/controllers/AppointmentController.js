@@ -62,18 +62,16 @@ class AppointmentController {
     }
 
     if (req.userId === provider_id) {
-      return res
-        .status(401)
-        .json({ error: 'You can only create appointments with other providers' });
+      return res.status(401).json({
+        error: 'You can only create appointments with other providers',
+      });
     }
 
     // Check for past dates
     const hourStart = startOfHour(parseISO(date));
 
     if (isBefore(hourStart, new Date())) {
-      return res
-        .status(400)
-        .json({ error: 'Past dates are not permitted' });
+      return res.status(400).json({ error: 'Past dates are not permitted' });
     }
 
     // Check date availability
@@ -125,8 +123,8 @@ class AppointmentController {
           model: User,
           as: 'user',
           attributes: ['name'],
-        }
-      ]
+        },
+      ],
     });
 
     if (appointment.user_id !== req.userId) {
