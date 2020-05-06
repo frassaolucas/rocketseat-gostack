@@ -25,5 +25,7 @@ module.exports = {
       },
     ],
     'import/prefer-default-export': 'off',
+    'react/static-property-placement': ['error', 'static public field'],
+    'react/state-in-constructor': ['error', 'never'],
   },
 };
