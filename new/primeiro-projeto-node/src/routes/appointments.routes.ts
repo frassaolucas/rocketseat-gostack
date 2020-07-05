@@ -7,7 +7,7 @@ import CreateAppointmentService from '../services/CreateAppointmentService';
 const appointmentsRouter = Router();
 const appointmentsRepository = new AppointmentsRepository();
 
-// list appointments
+// list appointmentss
 appointmentsRouter.get('/', (request, response) => {
   const appointments = appointmentsRepository.all();
 
