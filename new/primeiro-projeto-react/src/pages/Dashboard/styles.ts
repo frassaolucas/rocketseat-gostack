@@ -64,6 +64,8 @@ export const Error = styled.span`
 `;
 
 export const Repositories = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
   margin-top: 80px;
   max-width: 700px;
 
@@ -72,7 +74,6 @@ export const Repositories = styled.div`
     border-radius: 5px;
     width: 100%;
     padding: 24px;
-    display: block;
     text-decoration: none;
     transition: transform 0.2s;
 
@@ -80,7 +81,7 @@ export const Repositories = styled.div`
     align-items: center;
 
     & + a {
-      margin-top: 16px;
+      margin-bottom: 16px;
     }
 
     &:hover {
